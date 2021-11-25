@@ -1,0 +1,37 @@
+CREATE DATABASE mova;
+USE mova;
+
+CREATE TABLE usuarios(
+	id_perfil INT NOT NULL AUTO_INCREMENT,
+	perfil VARCHAR(50),
+	contrasena VARCHAR(10) NOT NULL,
+	conf_contrasena VARCHAR(10) NOT NULL,
+	nombre VARCHAR(50),
+	apellidos VARCHAR(50),	
+	correo VARCHAR(50),
+	telefono VARCHAR(50),
+	fecha DATE,
+	hora TIME,
+	PRIMARY KEY (id_perfil)
+);
+
+
+DESCRIBE usuarios;
+
+INSERT INTO usuarios(perfil, contrasena, conf_contrasena, nombre, apellidos, correo, telefono, fecha, hora)
+ VALUES('octavio', '123456789', '123456789', 'Octavio', 'Martínez González', 'octavio123@alumnos.utleon.edu.mx', '4291035657', '2021-11-22', '03:57:22'),
+       ('vanne', '12456789', '12456789', 'Vannesa', 'Fernandez Solis', 'vannesa124@alumnos.utleon.edu.mx', '4771035657', '2021-11-22', '03:57:22'),
+		('aldo', '66666666', '66666666', 'Aldo Guadalupe', 'Armenta Negrete', 'aldo23@alumnos.utleon.edu.mx', '4691035657', '2021-11-22', '03:57:22');
+		
+SELECT * FROM usuarios;
+
+CREATE TABLE contacto(
+	nombre VARCHAR(50) NOT NULL,
+	correo VARCHAR(50) NOT NULL,
+	asunto VARCHAR(12) NOT NULL,
+	fecha DATE,
+	comentarios VARCHAR(100)
+);
+DESCRIBE contacto;
+ INSERT INTO contacto(nombre, correo, asunto, fecha, comentarios)
+ VALUES('Vanessa', '20001111@outlook.es', 'Sujerencias', '2020-11-23', 'No la arman para vender.');
